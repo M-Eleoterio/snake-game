@@ -1,0 +1,54 @@
+#rank-container {
+  background-color: #01e22e;
+  border-radius: 10px;
+  width: 700px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
+  gap: 70px;
+}
+
+#rank-content {
+}
+
+#rank-content table {
+    background-color: white;
+    color: black;
+    padding: 30px;
+    border-radius: 6px;
+    border-collapse: collapse;
+}
+
+#rank-content table td {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+table tbody tr:hover {
+    background-color: rgb(0, 211, 0);
+    color: white;
+    border: 1px solid white;
+}
+
+table th {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+#rank-btns {
+  display: flex;
+  gap: 80px;
+}
+
+#rank-btns button {
+  width: 120px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 2px;
+  cursor: pointer;
+}
