@@ -247,6 +247,18 @@ export default function Game() {
       )
     );
 
+    // checando se junk nasceu no mesmo bloco que comida
+    newJFood.forEach(junk => {
+      food.forEach(fd => {
+        if (
+          junk.x == fd.x ||
+          junk.y == fd.y
+        ) {
+          generateFood();
+        }
+      });
+    });
+
     for (let i = 0; i < newJFood.length; i++) {
       if (
         newJFood[i].x >= gridSize.x ||
@@ -276,6 +288,18 @@ export default function Game() {
         (segment) => newStone[0].x == segment.x && newStone[0].y == segment.y
       )
     );
+
+    // checando se pedra nasceu no mesmo bloco que junk
+    newStone.forEach(rock => {
+      jFood.forEach(junk => {
+        if (
+          rock.x == junk.x ||
+          rock.y == junk.y
+        ) {
+          generateFood();
+        }
+      });
+    });
 
     for (let i = 0; i < newStone.length; i++) {
       if (
