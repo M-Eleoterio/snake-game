@@ -172,21 +172,6 @@ export default function Game() {
   const checkCollision = () => {
     if (points <= 0 && jFoodEaten > 0) {
       setGameOver(true);
-
-      setSnake([{ x: 0, y: 0 }]);
-      setFood([{ x: 5, y: 5 }]);
-      setJFood([
-        { x: 5, y: 7 },
-        { x: 7, y: 5 },
-      ]);
-      setStone([
-        { x: 8, y: 11 },
-        { x: 9, y: 10 },
-      ]);
-      setDir("");
-      setGameOver(false);
-      setIsRunning(false)
-      setGameSpeed(80);
     }
 
     let head = snake[0];
@@ -329,7 +314,7 @@ export default function Game() {
       clearInterval(interval);
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [gameOver, dir, snake]);
+  }, [gameOver, dir, snake, points]);
 
   return (
     <div id="game-container">
