@@ -22,7 +22,7 @@ export default function Game() {
   const gridSize = { x: 17, y: 15 };
 
   //GAME VARS
-  const [points, setPoints] = useState(100);
+  const [points, setPoints] = useState(0);
   let medals = Math.floor(points / 50);
   let trophies = Math.floor(medals / 3);
   let phase = Math.floor(points / 50) + 1;
