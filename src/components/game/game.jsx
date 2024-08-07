@@ -18,7 +18,7 @@ export default function Game() {
   const [dir, setDir] = useState("");
   const [gameOver, setGameOver] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
-  const [gameSpeed, setGameSpeed] = useState(80);
+  const [gameSpeed, setGameSpeed] = useState(120);
   const gridSize = { x: 17, y: 15 };
 
   //GAME VARS
