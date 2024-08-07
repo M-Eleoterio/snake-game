@@ -40,3 +40,9 @@
     background-color: #18ac5c;
     cursor: pointer;
 }
+
+@media (max-width: 700px) {
+  #posmodal-container {
+    transform: scale(0.8);
+  }
+}

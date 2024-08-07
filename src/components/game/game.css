@@ -137,7 +137,7 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 1px;
     }
 
     body {
@@ -153,13 +153,12 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         width: 100%;
-        gap: 20px;
     }
 
     .gameBoard {
-        transform: scale(0.7);
-        margin-left: 7%;
+        transform: scale(0.5);
     }
 
     #keys {
@@ -183,5 +182,12 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
         border: 1px solid white;
         background-color: green;
         color: white;
+    }
+}
+
+@media (max-height: 700px) {
+    #keys {
+        transform: scale(0.8);
+        bottom: 0px;
     }
 }

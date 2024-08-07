@@ -67,8 +67,46 @@ table th {
   background-color: rgb(0, 94, 0);
   margin: 15px;
 }
+
 ::-webkit-scrollbar {
   padding: 5px;
   background-color: white;
   border-radius: inherit;
+}
+
+@media (max-width: 700px) {
+  #rank-btns {
+    position: fixed;
+    width: 550px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    right: 10%;
+    bottom: 5%;
+  }
+
+  #rank-btns button {
+    border: 1px solid black;
+  }
+
+  #rank-container {
+    background-color: transparent;
+    overflow: visible;
+    margin-left: 1%;
+  }
+
+  #rank-content {
+    margin: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  #rank-container {
+    transform: scale(0.7);
+  }
+  #rank-content {
+    margin: 50px;
+  }
 }
