@@ -420,12 +420,12 @@ export default function Game() {
           </div>
           <div id="keys">
             <div className="key-row">
-              <button className="key" id="key-up">&uarr;</button>
+              <button className="key" id="key-up" onClick={() => setDir("UP")}>&uarr;</button>
             </div>
             <div className="key-row">
-            <button className="key" id="key-left">&larr;</button>
-            <button className="key" id="key-down">&darr;</button>
-            <button className="key" id="key-right">&rarr;</button>
+              <button className="key" id="key-left" onClick={() => setDir("LEFT")}>&larr;</button>
+              <button className="key" id="key-down" onClick={() => setDir("DOWN")}>&darr;</button>
+              <button className="key" id="key-right" onClick={() => setDir("RIGHT")}>&rarr;</button>
             </div>
           </div>
         </>

@@ -113,6 +113,7 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
 
 #keys {
     display: none;
+    
 }
 
 /* RESPONSIVIDADE */
@@ -160,6 +161,7 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
         transform: scale(0.7);
         margin-left: 7%;
     }
+
     #keys {
         position: absolute;
         bottom: 20px;
@@ -168,6 +170,7 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
         align-items: center;
         flex-direction: column;
     }
+
     .key {
         width: 70px;
         height: 70px;
@@ -175,6 +178,7 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
         font-weight: 900;
         border-radius: 10px;
     }
+
     .key:active {
         border: 1px solid white;
         background-color: green;
