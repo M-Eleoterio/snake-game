@@ -83,7 +83,7 @@ table th {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    right: 10%;
+    right: 15%;
     bottom: 5%;
   }
 
@@ -94,12 +94,8 @@ table th {
   #rank-container {
     background-color: transparent;
     overflow: visible;
-    margin-left: 1%;
   }
 
-  #rank-content {
-    margin: 50px;
-  }
 }
 
 @media (max-width: 500px) {
