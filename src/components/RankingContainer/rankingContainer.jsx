@@ -17,6 +17,7 @@ export default function CpRankingContainer() {
   })
 
   return (
+    <>
     <div id="rank-container">
       <div id="rank-content">
         <table>
@@ -44,6 +45,7 @@ export default function CpRankingContainer() {
           </tbody>
         </table>
       </div>
+    </div>
       <div id="rank-btns">
         <button className="rank-btn" onClick={() => navigate("/game")}>
           JOGAR NOVAMENTE
@@ -52,6 +54,6 @@ export default function CpRankingContainer() {
           MENU INICAL
         </button>
       </div>
-    </div>
+      </>
   );
 }
