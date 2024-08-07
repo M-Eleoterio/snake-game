@@ -22,7 +22,7 @@ export default function Game() {
   const gridSize = { x: 17, y: 15 };
 
   //GAME VARS
-  const [points, setPoints] = useState(0);
+  const [points, setPoints] = useState(100);
   let medals = Math.floor(points / 50);
   let trophies = Math.floor(medals / 3);
   let phase = Math.floor(points / 50) + 1;
@@ -57,7 +57,6 @@ export default function Game() {
   const handleKeyPress = (e) => {
 
     if (dir !== "DOWN" && e.key == "ArrowUp") {
-      console.log(dir);
       setDir("UP");
     } else if (e.key == "ArrowRight" && dir != "LEFT") {
       setDir("RIGHT");
@@ -194,7 +193,10 @@ export default function Game() {
   };
 
   const generateFood = () => {
+    const MAX_ATTEMPTS = 100; // Limite de tentativas para evitar loop infinito
+    let attempts = 0;
     let newFood;
+
     do {
       newFood = [];
       for (let i = 0; i < phase; i++) {
@@ -203,33 +205,31 @@ export default function Game() {
           y: Math.floor(Math.random() * gridSize.y),
         });
       }
-    } while (
-      snake.some(
-        (segment) => newFood[0].x == segment.x && newFood[0].y == segment.y
-      )
-    );
 
-    // checando se comida nasceu no mesmo bloco que rocha
-    newFood.forEach(food => {
-      stone.forEach(rock => {
-        if (
-          food.x == rock.x ||
-          food.y == rock.y
-        ) {
-          generateFood();
-        }
-      });
-    });
+      // Verifica se a nova comida não está na mesma posição que a cobra
+      let isOnSnake = newFood.some(food =>
+        snake.some(segment => food.x === segment.x && food.y === segment.y)
+      );
 
+      // Verifica se a nova comida não está na mesma posição que uma rocha
+      let isOnRock = newFood.some(food =>
+        stone.some(rock => food.x === rock.x && food.y === rock.y)
+      );
 
-    for (let i = 0; i < newFood.length; i++) {
-      if (newFood[i].x >= gridSize.x || newFood[i].y >= gridSize.y) {
-        generateFood();
-        return;
+      // Verifica se a nova comida está fora dos limites da grade
+      let isOutOfLimits = newFood.some(food =>
+        food.x >= gridSize.x || food.y >= gridSize.y
+      );
+
+      if (!isOnSnake && !isOnRock && !isOutOfLimits) {
+        return newFood; // Comida válida gerada
       }
-    }
-    return newFood;
+
+      attempts++;
+    } while (attempts < MAX_ATTEMPTS);
+
   };
+
 
   const generateJFood = () => {
     let newJFood;
