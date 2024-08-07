@@ -1,11 +1,13 @@
 #game-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .game-data {
-    text-align: center;    
+    text-align: center;
     width: 200px;
 }
 
@@ -24,6 +26,7 @@ label[for="game-dark-check"] {
     z-index: 2;
     overflow: hidden;
 }
+
 .ball {
     background-color: white;
     width: 50%;
@@ -38,7 +41,7 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
     background-color: rgb(60, 86, 230);
 }
 
-#game-dark-check:checked ~ .ball {
+#game-dark-check:checked~.ball {
     margin-left: 20px;
 }
 
@@ -64,22 +67,27 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
     background: url("../../../public/img/snake1.png");
     background-size: cover;
 }
+
 .sSnake1 {
     background: url("../../../public/img/sSnake1.png");
     background-size: cover;
 }
+
 .snake2 {
     background: url("../../../public/img/snake2.png");
     background-size: cover;
 }
+
 .snake3 {
     background: url("../../../public/img/snake3.png");
     background-size: cover;
 }
+
 .snake4 {
     background: url("../../../public/img/snake4.png");
     background-size: cover;
 }
+
 .snake5 {
     background: url("../../../public/img/snake5.png");
     background-size: cover;
@@ -90,6 +98,7 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
     height: 100%;
     background: url("/public/img/lettuce.png");
 }
+
 .jFood {
     width: 100%;
     height: 100%;
@@ -102,3 +111,73 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
     background: url("/public/img/pedra.png");
 }
 
+#keys {
+    display: none;
+}
+
+/* RESPONSIVIDADE */
+
+/* monitores pequenos */
+@media (max-width: 1400px) {
+    #game-container {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+/* celulares */
+@media (max-width: 450px) {
+
+    #game-container {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .game-data {
+        transform: scale(0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .gameBoard {
+        transform: scale(0.7);
+        margin-left: 7%;
+    }
+    #keys {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .key {
+        width: 70px;
+        height: 70px;
+        font-size: 40px;
+        font-weight: 900;
+        border-radius: 10px;
+    }
+    .key:active {
+        border: 1px solid white;
+        background-color: green;
+        color: white;
+    }
+}

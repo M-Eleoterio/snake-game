@@ -418,6 +418,16 @@ export default function Game() {
               </div>
             ))}
           </div>
+          <div id="keys">
+            <div className="key-row">
+              <button className="key" id="key-up">&uarr;</button>
+            </div>
+            <div className="key-row">
+            <button className="key" id="key-left">&larr;</button>
+            <button className="key" id="key-down">&darr;</button>
+            <button className="key" id="key-right">&rarr;</button>
+            </div>
+          </div>
         </>
       )}
     </div>
