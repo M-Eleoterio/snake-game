@@ -209,12 +209,25 @@ export default function Game() {
       )
     );
 
+    // checando se comida nasceu no mesmo bloco que rocha
+    newFood.forEach(food => {
+      stone.forEach(rock => {
+        if (
+          food.x == rock.x ||
+          food.y == rock.y
+        ) {
+          generateFood();
+        }
+      });
+    });
+
+
     for (let i = 0; i < newFood.length; i++) {
       if (newFood[i].x >= gridSize.x || newFood[i].y >= gridSize.y) {
         generateFood();
+        return;
       }
     }
-
     return newFood;
   };
 
