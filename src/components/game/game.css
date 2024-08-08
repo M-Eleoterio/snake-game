@@ -112,8 +112,26 @@ label[for="game-dark-check"]:has(#game-dark-check:checked) {
 }
 
 #keys {
-    display: none;
-    
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.key {
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    font-weight: 900;
+    border-radius: 10px;
+}
+
+.key:active {
+    border: 1px solid white;
+    background-color: green;
+    color: white;
 }
 
 /* RESPONSIVIDADE */
